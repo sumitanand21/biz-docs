@@ -1,43 +1,22 @@
-  name: Upload Folder to Google Drive
-  on:
-    push:
-      branches:
-        - main
-      paths:
-        - 'docs/**'
-  jobs:
-    upload:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v2
-        - name: Upload Folder to Google Drive
-          uses: mathisve/gdrive-upload-action@main
-          with:
-            credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-            folderId: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
-            filename: 'docs'
-
-
-# name: Upload Docs to Google Drive
-# on:
-#   push:
-#     branches:
-#       - main
-#     paths:
-#       - 'docs/**'
-# jobs:
-#   upload:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v2
-#       - name: Upload Docs Folder to Google Drive
-#         uses: adityak74/google-drive-upload-git-action@v0.3
-#         with:
-#           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-#           filename: 'docs/*'
-#           folderId: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
+name: Upload Docs to Google Drive
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Upload Docs Folder to Google Drive
+        uses: adityak74/google-drive-upload-git-action@v0.3
+        with:
+          credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+          filename: 'docs/*'
+          folderId: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
 
 
 # name: Upload Docs to Google Drive
