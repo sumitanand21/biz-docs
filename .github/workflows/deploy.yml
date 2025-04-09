@@ -16,4 +16,4 @@ jobs:
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
           folder: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
-          target: 'docs'
+          target: 'docs/*'
