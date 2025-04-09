@@ -12,7 +12,7 @@
         - name: Checkout Repository
           uses: actions/checkout@v2
         - name: Upload Folder to Google Drive
-          uses: mathisve/gdrive-upload-action@v1.0.0
+          uses: mathisve/gdrive-upload-action@main
           with:
             credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
             folderId: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
