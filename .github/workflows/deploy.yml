@@ -12,8 +12,29 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Upload Docs Folder to Google Drive
-        uses: Jodebu/upload-to-drive@master
+        uses: adityak74/google-drive-upload-git-action@v0.3
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-          folder: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
-          target: 'docs/*'
+          filename: 'docs/*'
+          folderId: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
+
+
+# name: Upload Docs to Google Drive
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'docs/**'
+# jobs:
+#   upload:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v2
+#       - name: Upload Docs Folder to Google Drive
+#         uses: Jodebu/upload-to-drive@master
+#         with:
+#           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+#           folder: '1BjfHmFuqDoRZgoHzH-Mm_GyolWTL8v9l'
+#           target: 'docs/*'
